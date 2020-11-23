@@ -75,7 +75,7 @@ class sequencer {
         this.sequencerValues = [-1, -1, -1, -1, -1, -1, -1, -1]
 
         let sequencePosition: number[] = sequenceType[s];
-
+        this.currentNote = 0;
         this.mode = SequencerMode.Sequencer;
         this.tempo = 120;
 
@@ -172,8 +172,9 @@ class sequencer {
 
     playMusic() {
         if (this.running) {
+            const melody = this.getMelody2();
             music.setTempo(this.tempo);
-            music.beginMelody(this.getMelody2(), MelodyOptions.Once);
+            music.startMelody(melody, MelodyOptions.Once);
         }
     }
 
@@ -209,7 +210,7 @@ class sequencer {
         this.currentNote = cycle(0, noteSequence.length - 1, this.currentNote, +1)
         if (!this.running) {
             let v = noteSequence[this.currentNote];
-            music.beginMelody([v.n + ":1"], MelodyOptions.Once);
+            music.startMelody([v.n + ":1"], MelodyOptions.Once);
         }
     }
 
@@ -266,5 +267,3 @@ input.onButtonPressed(Button.AB, () => {
 
 
 seq.start();
-
-
