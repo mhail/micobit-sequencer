@@ -1,0 +1,319 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="i/+B)L$7RA[gaQ[h/PVS">play</variable>
+    <variable type="" id="{J9LXU{qwkXPp.iNbJ^!">playing</variable>
+    <variable type="" id="F@:%4k3A:,%lk8J{DDE+">data</variable>
+    <variable type="" id="s97~n,j#b9IR}DTksi;-">note</variable>
+    <variable type="" id="t,2@w2M@f(yZJ~_{0kc6">steps</variable>
+  </variables>
+  <block type="device_button_event" id="m9YvM;2w)YH!I:H_i9jG" x="0" y="0">
+    <field name="NAME">Button.B</field>
+    <statement name="HANDLER">
+      <block type="variables_set" id="4FBa2)#...KFx1s`/Nv!">
+        <field name="VAR" id="i/+B)L$7RA[gaQ[h/PVS" variabletype="">play</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="logic_negate" id="=kBNP)_UjoPVL_=pUYhd">
+            <value name="BOOL">
+              <shadow type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </shadow>
+              <block type="variables_get" id="+gmu[O]z$*2,/Hgyj~o5">
+                <field name="VAR" id="i/+B)L$7RA[gaQ[h/PVS" variabletype="">play</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="Z^Env-h}v0qp9bjeZl5g">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <shadow type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </shadow>
+              <block type="variables_get" id="i?djOwiRggip?si^F^pL">
+                <field name="VAR" id="i/+B)L$7RA[gaQ[h/PVS" variabletype="">play</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="device_unplot" id=":dhENQ$$2Ky0@S?MXbb9">
+                <value name="x">
+                  <shadow type="math_number" id="44eg[`sSPJryNKdhK(aR">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="y">
+                  <shadow type="math_number" id="7Cu_O5O^YWGpd[orOM,3">
+                    <field name="NUM">4</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="device_unplot" id="vU0{}RCG8A{an(c0A}ZS">
+                    <value name="x">
+                      <shadow type="math_number" id="EmDHPSWq=dxt=s=l@(vT">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="y">
+                      <shadow type="math_number" id="OUG8yqKrphBvNBc]u}Z/">
+                        <field name="NUM">4</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="device_plot" id="rz0|hE;XhoB08}a-j1$c">
+                <value name="x">
+                  <shadow type="math_number" id="3mv6GJ:TkE!n5@yAZ@BX">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <value name="y">
+                  <shadow type="math_number" id="VC/uW~7HVgVsSZ[2|wdZ">
+                    <field name="NUM">4</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="device_plot" id="CF0?0bef!D[IKEj+v=~+">
+                    <value name="x">
+                      <shadow type="math_number" id="@TTO2eR+F5FI^9]2q;cx">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="y">
+                      <shadow type="math_number" id="1}|OP}of(7l~Gz|6@ZtM">
+                        <field name="NUM">4</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="device_button_event" id="_8Gbi=~S`hC2jlH0TM+-" x="321" y="0">
+    <field name="NAME">Button.A</field>
+    <statement name="HANDLER">
+      <block type="typescript_statement" id="+J2_hDmm[hv0%xFEpb/P" editable="false">
+        <mutation line0="seq.toggleNote();" numlines="1"></mutation>
+      </block>
+    </statement>
+  </block>
+  <block type="melody_on_event" id="~ue(hQjHLpCSqt~eX0rQ" x="570" y="0">
+    <field name="value">MusicEvent.MelodyEnded</field>
+    <statement name="HANDLER">
+      <block type="variables_set" id=",`,Mb4s$`cd}UX^jp,E@">
+        <field name="VAR" id="{J9LXU{qwkXPp.iNbJ^!" variabletype="">playing</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="logic_boolean" id="B-PpayZ{Zh9o^f8XQxKg">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="melody_on_event" id="ECr[6y]G3ox^}tjNCmm`" x="860" y="0">
+    <field name="value">MusicEvent.MelodyNotePlayed</field>
+    <statement name="HANDLER">
+      <block type="typescript_statement" id="Dw8K3.p^5~wI|tCTQlxG" editable="false">
+        <mutation line0="seq.nextNote();" numlines="1"></mutation>
+        <next>
+          <block type="typescript_statement" id="odS*V[ss|_8AIZ48Cnd3" editable="false">
+            <mutation line0="seq.display();" numlines="1"></mutation>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="pxt-on-start" id="{uZ:z**6aat`Fq/}$D}U" x="1179" y="0">
+    <statement name="HANDLER">
+      <block type="variables_set" id="ET90@w|tgPm!U+cKgUAn">
+        <field name="VAR" id="F@:%4k3A:,%lk8J{DDE+" variabletype="">data</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="lists_create_with" id="VSj7cSyOz|,/k^is#vRu">
+            <mutation items="0"></mutation>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="w3=0IDoXT2!._W/SgOUE">
+            <field name="VAR" id="s97~n,j#b9IR}DTksi;-" variabletype="">note</field>
+            <value name="VALUE">
+              <shadow type="math_number" id="/DHZ`vtHXH,!?!aU_zRO">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="variables_set" id="bD:eC{y)eUAjiX]P8?QB">
+                <field name="VAR" id="t,2@w2M@f(yZJ~_{0kc6" variabletype="">steps</field>
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="lists_create_with" id="JOh`r=4)*IzUMn-$,8DS">
+                    <mutation items="8"></mutation>
+                    <value name="ADD0">
+                      <block type="typescript_expression" id="$H/YRm+B|{p#=j;obCGu" editable="false">
+                        <field name="EXPRESSION">
+    { x: 1, y: 1 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="typescript_expression" id="Gw+7mk8GP*h((_Gc!RsG" editable="false">
+                        <field name="EXPRESSION">
+    { x: 2, y: 1 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD2">
+                      <block type="typescript_expression" id="9*^AaXcc-a)i/RJ^#?k-" editable="false">
+                        <field name="EXPRESSION">
+    { x: 3, y: 1 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD3">
+                      <block type="typescript_expression" id="A._%^W{FSxH%gxZRx(J(" editable="false">
+                        <field name="EXPRESSION">
+    { x: 3, y: 2 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD4">
+                      <block type="typescript_expression" id="e%+qQsCIyT6hxzvJilz~" editable="false">
+                        <field name="EXPRESSION">
+    { x: 3, y: 3 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD5">
+                      <block type="typescript_expression" id="TE)!z#IwuoZp[*mg?`d8" editable="false">
+                        <field name="EXPRESSION">
+    { x: 2, y: 3 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD6">
+                      <block type="typescript_expression" id="9uz5AM]C~2dn5{*l=br1" editable="false">
+                        <field name="EXPRESSION">
+    { x: 1, y: 3 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                    <value name="ADD7">
+                      <block type="typescript_expression" id="{|(2k8Wout*g%yT9oDZP" editable="false">
+                        <field name="EXPRESSION">
+    { x: 1, y: 2 }
+                        
+                        
+                        </field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="typescript_statement" id="NYA!0S4.,V4U5MjmCqL?" editable="false">
+                    <mutation line0="class sequencer {" line1="    static REST = &quot;r&quot;;" line2="" line3="    model: Array&lt;{" line4="        i: number;" line5="        x: number;" line6="        y: number;" line7="        n: string;" line8="    }&gt;;" line9="" line10="    noteNumber: number;" line11="    constructor() {" line12="        this.model = steps.map((value: {" line13="            x: number;" line14="            y: number;" line15="        }, index: number) =&gt; {" line16="            return { i: index, x: value.x, y: value.y, n: sequencer.REST }" line17="        })" line18="" line19="" line20="    }" line21="" line22="    getMelody() {" line23="        let notes = this.model.map((value: {" line24="            i: number;" line25="            x: number;" line26="            y: number;" line27="            n: string;" line28="        }, index: number) =&gt; {" line29="            return value.n + &quot;:1&quot;;" line30="        });" line31="        return notes;" line32="    }" line33="" line34="    toggleNote() {" line35="        let i = this.noteNumber;" line36="        let n = this.model[i].n;" line37="        this.model[i].n = sequencer.REST == n ? &quot;g&quot; : sequencer.REST;" line38="    }" line39="" line40="    isPlayed(index: number) {" line41="        return sequencer.REST == this.model[index].n;" line42="    }" line43="" line44="    isPlaying(index: number) {" line45="" line46="    }" line47="" line48="    nextNote() {" line49="        this.noteNumber = Math.clamp(0, this.model.length - 1, (this.noteNumber + 1) % 8);" line50="    }" line51="" line52="    display() {" line53="        led.setDisplayMode(DisplayMode.Greyscale);" line54="        for (let index = 0; index &lt; this.model.length; index++) {" line55="            let m = this.model[index];" line56="            let b = this.noteNumber == m.i ? 255 : sequencer.REST == m.n ? 0 : 10;" line57="            led.plotBrightness(m.x, m.y, b);" line58="        }" line59="" line60="    }" line61="}" numlines="62"></mutation>
+                    <next>
+                      <block type="typescript_statement" id="5/A@.eS0Hj;7XEWxrJ;F" editable="false">
+                        <mutation line0="let seq = new sequencer()" numlines="1" declaredvars="seq"></mutation>
+                        <next>
+                          <block type="device_set_tempo" id="2ZsQ^vdoWKBlKE8:(K|D">
+                            <value name="value">
+                              <shadow type="math_number" id="-|;YDHF_oWCF!@4-99mc">
+                                <field name="NUM">60</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="device_while" id="7/;^wT#3Gfh_*Unmrqo*">
+                                <value name="COND">
+                                  <shadow type="logic_boolean" id="NZffn?E6@*5r}evQk+:}">
+                                    <field name="BOOL">TRUE</field>
+                                  </shadow>
+                                </value>
+                                <statement name="DO">
+                                  <block type="controls_if" id="p~MH-7c7ztGpiZTY.`so">
+                                    <value name="IF0">
+                                      <shadow type="logic_boolean">
+                                        <field name="BOOL">TRUE</field>
+                                      </shadow>
+                                      <block type="logic_negate" id="s[)Q.$]7=WlE*IJx;|,I">
+                                        <value name="BOOL">
+                                          <shadow type="logic_boolean">
+                                            <field name="BOOL">TRUE</field>
+                                          </shadow>
+                                          <block type="variables_get" id="?k]Xun2hEWB7TR5$sU^#">
+                                            <field name="VAR" id="{J9LXU{qwkXPp.iNbJ^!" variabletype="">playing</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="variables_set" id="cwAY]}pT:,.A0zV!+mfG">
+                                        <field name="VAR" id="{J9LXU{qwkXPp.iNbJ^!" variabletype="">playing</field>
+                                        <value name="VALUE">
+                                          <shadow type="math_number">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="logic_boolean" id="J_eY3sdsb63`fm~m0`V`">
+                                            <field name="BOOL">TRUE</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="device_start_melody" id=".CEuIqW!DIS|%HZg%^|Q">
+                                            <field name="options">MelodyOptions.Once</field>
+                                            <value name="melody">
+                                              <shadow type="device_builtin_melody"></shadow>
+                                              <block type="typescript_expression" id="i*hLB7P,=i3@Rtlr{3`s" editable="false">
+                                                <field name="EXPRESSION">seq.getMelody()</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
